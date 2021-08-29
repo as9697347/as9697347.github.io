@@ -1,0 +1,48 @@
+         <a expr:href="data:blog.homepageUrl" style="text-decoration: none;"><span style="display:block;margin:auto;padding:auto;width:150px;height:52px;text-align:center;color:#fff;background:#0016FF;box-shadow:#0016FF 0px 2px 3px .1px;font-size:16px;border-radius:5px;padding-top:3px;font-weight:600;text-shadow:#000 0px 1px 1px">العودة إلى الصفحة الرئيسية
+</span></a>
+<a onclick="Counter('h.com','share')">
+	hi
+	</a>
+<h2 style="text-align:center;background:#FF37C6;color:#fff;">
+التحميلات:
+<span id="downloader" style="background:#fff;color:#FF00A3;text-align:center;border-radius:3px;padding-left:10px;padding-right:10px;padding-top:3px;padding-bottom:3px;margin-right:5px;"></span>
+</h2>
+<script>
+function _get(e){
+return document.getElementById(e);
+}
+function View(){
+var input = document.createElement('script');
+    input.setAttribute('src', '//ahmedking.atwebpages.com/share.js');
+    document.body.appendChild(input);
+    try{
+    	count=counto;
+    }
+    catch(error){
+    	count=0;
+    }
+    _get('downloader').innerHTML=count;
+    document.body.removeChild(input);
+setTimeout('View()',0);
+}
+View();
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+}
+function Counter(url,name){
+var date=new Date().getDate();
+text=String(date);
+list=['Z','C','A','F','G','J','W','S','M','$'];
+for(i=0;i<10;i++){
+text=text.split(i).join(list[i]);
+}
+try{
+httpGet('http://ahmedking.atwebpages.com/?en='+text+'&file='+name);
+} catch(error){};
+window.location.href=url;
+}
+</script>
+<script src="//ahmedking.atwebpages.com/share.js" type='text/javascript'/>
