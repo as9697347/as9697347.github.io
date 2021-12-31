@@ -3,7 +3,7 @@
   "name": "A.N.H cyber",
   "theme_color": "#000fc1",
   "background_color": "#00BEFF",
-  "text_color": "#FFFFFF",
+  "color": "#FFFFFF",
   "display": "standalone",
   "icons": [
       {  
