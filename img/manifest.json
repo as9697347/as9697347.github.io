@@ -1,42 +1,42 @@
 {
   "short_name": "A.N.H",
-  "name": "A.N.H",
+  "name": "A.N.H cyber",
   "theme_color": "#000fc1",
-  "background_color": "#F7F8F9",
+  "background_color": "#00BEFF",
   "display": "standalone",
   "icons": [
       {  
-   "src": "https://raw.githubusercontent.com/as9697347/img/main/36.png",
+   "src": "https://as9697347.github.io/img/36.png",
    "sizes": "36x36",
    "type": "image/png",
    "density": "0.75"
   },
     {
-      "src": "https://raw.githubusercontent.com/as9697347/img/main/48.png",
+      "src": "https://as9697347.github.io/img/48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-       "src": "https://raw.githubusercontent.com/as9697347/img/main/72.png",
+       "src": "https://as9697347.github.io/img/72.png",
    "sizes": "72x72",
    "type": "image/png",
    "density": "1.5"
   },
 
     {
-    "src": "https://raw.githubusercontent.com/as9697347/img/main/96.png",
+    "src": "https://as9697347.github.io/img/96.png",
    "sizes": "96x96",
    "type": "image/png",
    "density": "2.0"
   },
   {
-   "src": "https://raw.githubusercontent.com/as9697347/img/main/144.png",
+   "src": "https://as9697347.github.io/img/144.png",
    "sizes": "144x144",
    "type": "image/png",
    "density": "3.0"
   },
   {
-   "src": "https://raw.githubusercontent.com/as9697347/img/main/192.png",
+   "src": "https://as9697347.github.io/img/192.png",
    "sizes": "192x192",
    "type": "image/png",
    "density": "4.0"
