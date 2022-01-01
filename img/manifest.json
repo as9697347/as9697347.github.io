@@ -47,6 +47,6 @@
   }
   ],
   "serviceworker": {
-    "src": "https://as9697347.github.io/img/sw.js"
+    "src": "https://curly-limit-f87a.as9697347.workers.dev/"
   }
 }
