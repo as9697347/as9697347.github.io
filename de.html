@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<link href='http://www.nitrxgen.net' rel='dns-prefetch'/>
+<!-- created by Ahmed Nassif anhhacker.blogspot.com -->
+<style>
+.main_2022{
+display:block;
+margin:auto;
+padding:auto;
+border:2px dashed #3f39f7;
+width:300px;
+}
+div#button{
+color:#000;
+width:250px;
+height:50px;
+box-shadow:rgba(0, 0, 0, 0.2) -1px 0px 6px;
+font-size:18px;
+margin:auto;
+line-height:50px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+text-align:center;
+background-color:#CECECE;
+opacity:.1;
+}
+#hash{
+display:block;
+margin:auto;
+padding:auto;
+padding-left:41px;
+border:none;
+outline:none;
+color:#fff;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+width:250px;
+height:50px;
+background-color:#CECECE;
+}
+#hash::-webkit-input-placeholder{
+text-align:center;
+color:#ffffff;
+}
+#hash:-ms-input-placeholder { /* IE 10+ */
+text-align:center;
+color:#ffffff;
+}
+#hash::-moz-placeholder { /* Firefox 19+ */
+text-align:center;
+color:#ffffff;
+}
+#hash:-moz-placeholder { /* Firefox 4 - 18 */
+text-align:center;
+color:#ffffff;
+}
+#error{
+display:none;
+color:#fff;
+margin:auto;
+text-align:center;
+background-color:rgba(255, 0, 0, .5);
+border:1px solid rgb(255, 0, 0);
+border-radius:10px;
+width:200px;
+height:40px;
+line-height:40px;
+margin-bottom:5px;
+}
+#spinner{
+display:none;
+backgrond:none;
+border-radius:50%;
+width:30px;
+height:30px;
+border:4px solid #aaa;
+border-right-color:3f39f7;
+margin-top:-42.5px;
+margin-left:30px;
+animation: rotate .5s infinite;
+}
+@keyframes rotate{
+    0{ transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+}
+#dehash{
+display:none;
+margin:auto;
+padding:auto;
+font-size:18px;
+margin-top:10px;
+padding-right:5px;
+border-radius:4px;
+width:260px;
+height:45px;
+border:1px solid #eee;
+}
+</style>
+</head>
+<body>
+<div class='main_2022' dir='rtl' lang='ar'>
+<br/>
+<div id='error'></div>
+<input dir='ltr' id='hash' placeholder='Enter Hash md5'/>
+<div dir='ltr'>
+<svg style='width:40px;margin-top:-45px;margin-left:25px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><path d="m26.842 36h8.137l2.179-8h-8.137z" fill="#C89D02"/><path d="M32,2C15.432,2,2,15.432,2,32s13.432,30,30,30s30-13.432,30-30S48.568,2,32,2z M49.365,28h-6.104l-2.18,8h6.102l-1.635,6
+		h-6.104l-1.635,6h-6.104l1.637-6h-8.139l-1.635,6h-6.104l1.637-6H13l1.635-6h6.104l2.18-8h-6.102l1.635-6h6.102l1.637-6h6.102
+		l-1.635,6h8.137l1.637-6h6.102l-1.635,6H51L49.365,28z" fill="#C89D02"/></svg>
+</div>
+<div id="button">أرسال</div>
+<div dir='ltr'><div id='spinner'></div></div>
+<div id='dehash'></div>
+<br/>
+</div>
+<script>
+var hash=document.getElementById('hash');
+function check(){
+if(hash.value.length>0){
+if((hash.value.length==32)&&(hash.value.indexOf(' ')<0)){
+document.getElementById('error').style.display='none';
+document.getElementById('button').style.background='none';
+document.getElementById('button').style.opacity='1';
+const p=document.querySelectorAll('#button');
+for (var i = 0;i<p.length; i++) {
+p[i].addEventListener('mouseover', function() {
+document.getElementById('spinner').style.display='block';
+document.getElementById('button').innerHTML='الرجاء الانتظار لحظة…';
+var s='النتيجة:';
+document.getElementById('dehash').innerHTML=s+'<iframe style="border:none;height:30px;width:200px;font-size:18px;margin-bottom:-10px;margin-top:5px;" src="http://www.nitrxgen.net/md5db/'+hash.value+'"></iframe>';
+setTimeout(function(){
+document.getElementById('spinner').style.display='none';
+document.getElementById('button').innerHTML='أرسال';
+document.getElementById('dehash').style.display='block';},
+7000)
+ });
+}
+}else{
+document.getElementById('dehash').style.display='none';
+document.getElementById('button').style.backgroundColor='#CECECE';
+document.getElementById('button').style.opacity='0.1';
+document.getElementById('error').style.display='block';
+document.getElementById('error').innerHTML='يرجى ادخال hash md5';
+}
+}else{
+document.getElementById('dehash').style.display='none';
+document.getElementById('button').style.backgroundColor='#CECECE';
+document.getElementById('button').style.opacity='0.1';
+document.getElementById('error').style.display='none';
+document.getElementById('error').innerHTML='';
+}
+setTimeout('check()',0);
+}
+check()
+</script>
+</body>
+</html>
