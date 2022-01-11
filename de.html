@@ -12,13 +12,16 @@ padding:auto;
 border:2px dashed #3f39f7;
 width:100%;
 }
-div#button{
+button#button{
+border:none;
+outline:none;
 color:#000;
 width:250px;
 height:50px;
 box-shadow:rgba(0, 0, 0, 0.2) -1px 0px 6px;
 font-size:18px;
 margin:auto;
+margin-top:-20px;
 line-height:50px;
 border-bottom-left-radius:5px;
 border-bottom-right-radius:5px;
@@ -78,11 +81,14 @@ height:30px;
 border:4px solid #aaa;
 border-right-color:3f39f7;
 margin-top:-42.5px;
-margin-left:30px;
-animation: rotate .5s infinite;
+margin-left:3px;
+animation: rotate .6s infinite;
 }
 @keyframes rotate{
-    0{ transform: rotate(0deg) }
+    0%     { transform: rotate(0deg) }
+    25%   { transform: rotate(90deg) }
+    50%   { transform: rotate(180deg) }
+    75%    { transform: rotate(270deg) }
     100% { transform: rotate(360deg) }
 }
 #dehash{
@@ -103,14 +109,14 @@ border:1px solid #eee;
 <div class='main_2022' dir='rtl' lang='ar'>
 <br/>
 <div id='error'></div>
-<input dir='ltr' id='hash' placeholder='Enter Hash md5'/>
-<div dir='ltr'>
-<svg style='width:40px;margin-top:-45px;margin-left:25px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><path d="m26.842 36h8.137l2.179-8h-8.137z" fill="#C89D02"/><path d="M32,2C15.432,2,2,15.432,2,32s13.432,30,30,30s30-13.432,30-30S48.568,2,32,2z M49.365,28h-6.104l-2.18,8h6.102l-1.635,6
+<div dir='ltr' style='width:250px;height:100px;margin:auto;'>
+<input id='hash' placeholder='Enter Hash md5'/>
+<svg style='width:40px;margin-top:-45px;margin-left:1px;position:relative;top:-20px;' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" enable-background="new 0 0 64 64"><path d="m26.842 36h8.137l2.179-8h-8.137z" fill="#C89D02"/><path d="M32,2C15.432,2,2,15.432,2,32s13.432,30,30,30s30-13.432,30-30S48.568,2,32,2z M49.365,28h-6.104l-2.18,8h6.102l-1.635,6
 		h-6.104l-1.635,6h-6.104l1.637-6h-8.139l-1.635,6h-6.104l1.637-6H13l1.635-6h6.104l2.18-8h-6.102l1.635-6h6.102l1.637-6h6.102
 		l-1.635,6h8.137l1.637-6h6.102l-1.635,6H51L49.365,28z" fill="#C89D02"/></svg>
-</div>
-<div id="button">أرسال</div>
+<button dir='rtl' id="button">أرسال</button>
 <div dir='ltr'><div id='spinner'></div></div>
+</div>
 <div id='dehash'></div>
 <br/>
 </div>
@@ -122,9 +128,7 @@ if((hash.value.length==32)&&(hash.value.indexOf(' ')<0)){
 document.getElementById('error').style.display='none';
 document.getElementById('button').style.background='none';
 document.getElementById('button').style.opacity='1';
-const p=document.querySelectorAll('#button');
-for (var i = 0;i<p.length; i++) {
-p[i].addEventListener('mouseover', function() {
+document.getElementById('button').onclick=function(){
 document.getElementById('spinner').style.display='block';
 document.getElementById('button').innerHTML='الرجاء الانتظار لحظة…';
 var s='النتيجة:';
@@ -134,7 +138,6 @@ document.getElementById('spinner').style.display='none';
 document.getElementById('button').innerHTML='أرسال';
 document.getElementById('dehash').style.display='block';},
 7000)
- });
 }
 }else{
 document.getElementById('dehash').style.display='none';
@@ -150,7 +153,7 @@ document.getElementById('button').style.opacity='0.1';
 document.getElementById('error').style.display='none';
 document.getElementById('error').innerHTML='';
 }
-setTimeout('check()',0);
+setTimeout('check()', 100);
 }
 check()
 </script>
