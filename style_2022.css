@@ -724,12 +724,11 @@ div#rx-options{float:right!important}
 }
 #prer{
 display:block;
-background-color: #000;
+background-color: #040412;
 text-align: left;
 border-radius: 5px;
 box-sizing: border-box;
-color: #4000FF;
-font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace;
+color: #76D119;
 font-size: 16px;
 line-height: 2;
 overflow-wrap: normal;
@@ -737,6 +736,7 @@ overflow: auto;
 padding: 0px auto;
 margin:0px auto;
 padding-left:5px;
+padding-bottom:5px;
 }
 #codered{
 background-attachment: initial;
